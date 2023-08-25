@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO Example</title>
+</head>
+<body>
+    <h1>Real-Time Data from Server:</h1>
+    <div id="data"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io(); // Connect to the Socket.IO server
+
+        socket.on('data', (data) => {
+            const dataElement = document.getElementById('data');
+            dataElement.textContent = `Received data: ${data}`;
+        });
+    </script>
+</body>
+</html>
